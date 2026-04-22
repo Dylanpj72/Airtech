@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.airtech.co.za
+
+# Sitemaps
+Sitemap: https://www.airtech.co.za/sitemap.xml
