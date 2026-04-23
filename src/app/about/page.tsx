@@ -72,7 +72,7 @@ export default function AboutPage() {
             <AnimateIn direction="left" delay={0.1}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
                 <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+                  src="/ray-founder.png"
                   alt="Raymond Prout-Jones, founder of Airtech Services"
                   fill
                   className="object-cover object-top"
