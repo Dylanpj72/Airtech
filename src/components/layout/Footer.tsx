@@ -40,8 +40,7 @@ export function Footer() {
                 alt="Airtech Services"
                 width={130}
                 height={47}
-                className="h-10 w-auto"
-                style={{ mixBlendMode: 'multiply' }}
+                className="h-[120px] w-auto"
               />
             </div>
             <p className="font-body text-sm leading-relaxed mb-6 max-w-xs" style={{ color: 'rgba(184,188,196,0.75)' }}>
