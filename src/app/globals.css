@@ -144,14 +144,14 @@
      BUTTONS
      ──────────────────────────────────────────────────────── */
 
-  /* PRIMARY — copper fill · white text · subtle lift on hover */
+  /* PRIMARY — navy fill · white text · subtle lift on hover */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: var(--color-copper);
+    background-color: var(--color-navy);
     color: #FFFFFF;
     font-family: var(--font-manrope), system-ui, sans-serif;
     font-size: 0.875rem;
@@ -166,13 +166,13 @@
   }
 
   .btn-primary:hover {
-    background-color: var(--color-copper-light);
-    box-shadow: 0 4px 20px rgba(176, 138, 91, 0.35);
+    background-color: var(--color-navy-700);
+    box-shadow: 0 4px 20px rgba(26, 31, 76, 0.4);
     transform: translateY(-1px);
   }
 
   .btn-primary:focus-visible {
-    outline: 2px solid var(--color-copper-deep);
+    outline: 2px solid var(--color-navy-500);
     outline-offset: 2px;
   }
 
