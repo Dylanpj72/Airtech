@@ -70,7 +70,7 @@ export function HeroSection() {
         style={{ pointerEvents: 'none' }}
         /* object-[center_25%] focuses on upper portion of video on mobile portrait
            where the AC unit sits; md:object-center is fine on landscape */
-        className="absolute inset-0 w-full h-full object-cover scale-[1.15] object-[right_25%] md:object-center"
+        className="absolute inset-0 w-full h-full object-cover scale-[1.15] object-[80%_25%] md:object-center"
       />
 
       {/* Cinematic overlay — dark bottom, reveals video at top */}
