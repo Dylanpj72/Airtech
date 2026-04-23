@@ -117,7 +117,7 @@ export function HeroSection() {
           <motion.h1
             variants={itemVariants}
             className="font-display font-semibold tracking-display leading-display mb-4 md:mb-6 text-white"
-            style={{ fontSize: 'clamp(1.85rem, 5.5vw, 4.2rem)' }}
+            style={{ fontSize: 'clamp(1.45rem, 4vw, 3rem)' }}
           >
             Precision Climate Control{' '}
             <span className="italic font-light" style={{ color: 'rgba(212,215,222,0.8)' }}>for</span>
