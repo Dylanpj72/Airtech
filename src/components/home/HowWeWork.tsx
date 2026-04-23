@@ -32,12 +32,12 @@ const steps = [
 export function HowWeWork() {
   return (
     <section
-      className="py-24 md:py-32"
+      className="py-14 md:py-24"
       style={{ backgroundColor: '#ECEEF5' }}
       aria-labelledby="process-heading"
     >
       <div className="container mx-auto px-6 lg:px-10">
-        <AnimateIn className="mb-16 max-w-xl">
+        <AnimateIn className="mb-10 md:mb-16 max-w-xl">
           <span className="copper-line" aria-hidden="true" />
           <p className="section-label mb-3">Our Process</p>
           <h2

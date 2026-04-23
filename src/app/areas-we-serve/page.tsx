@@ -33,7 +33,7 @@ export default function AreasWeServePage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
+      <section className="pt-32 md:pt-40 pb-10 md:pb-16 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(176,138,91,0.07) 0%, transparent 60%)' }}

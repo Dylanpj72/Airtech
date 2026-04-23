@@ -17,7 +17,7 @@ export function AreasTeaser() {
 
   return (
     <section
-      className="py-24 md:py-32"
+      className="py-14 md:py-24"
       style={{ backgroundColor: '#FFFFFF' }}
       aria-labelledby="areas-heading"
     >

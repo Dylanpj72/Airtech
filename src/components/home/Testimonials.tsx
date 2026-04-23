@@ -96,12 +96,12 @@ function TestimonialCard({ review, index }: { review: (typeof featured)[0]; inde
 export function Testimonials() {
   return (
     <section
-      className="py-24 md:py-32"
+      className="py-14 md:py-24"
       style={{ backgroundColor: '#D8DCF0' }}
       aria-labelledby="testimonials-heading"
     >
       <div className="container mx-auto px-6 lg:px-10">
-        <AnimateIn className="mb-14 text-center">
+        <AnimateIn className="mb-10 md:mb-14 text-center">
           <span className="copper-line mx-auto" aria-hidden="true" />
           <p className="section-label mb-3">What Our Clients Say</p>
           <h2

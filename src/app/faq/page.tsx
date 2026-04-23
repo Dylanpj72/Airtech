@@ -30,7 +30,7 @@ export default function FAQPage() {
       />
 
       {/* Hero */}
-      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
+      <section className="pt-32 md:pt-40 pb-10 md:pb-16 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div className="container mx-auto px-6 lg:px-10">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />

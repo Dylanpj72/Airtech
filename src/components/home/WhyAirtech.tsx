@@ -85,13 +85,13 @@ function PillarCard({ pillar, index }: { pillar: (typeof pillars)[0]; index: num
 export function WhyAirtech() {
   return (
     <section
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-14 md:py-24 overflow-hidden"
       style={{ backgroundColor: '#D8DCF0' }}
       aria-labelledby="why-airtech-heading"
     >
       {/* Large watermark — editorial depth detail */}
       <div
-        className="absolute right-[-2rem] top-1/2 -translate-y-1/2 select-none pointer-events-none"
+        className="hidden md:block absolute right-[-2rem] top-1/2 -translate-y-1/2 select-none pointer-events-none"
         aria-hidden="true"
       >
         <span
@@ -103,7 +103,7 @@ export function WhyAirtech() {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-10 md:mb-16">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />
             <p className="section-label mb-3">Why Airtech</p>

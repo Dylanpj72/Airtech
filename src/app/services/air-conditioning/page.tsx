@@ -46,7 +46,7 @@ export default function AirConditioningPage() {
       />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
+      <section className="pt-32 md:pt-40 pb-12 md:pb-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 30% 35%, rgba(176,138,91,0.07) 0%, transparent 60%)' }}
