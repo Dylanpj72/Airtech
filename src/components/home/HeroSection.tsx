@@ -31,11 +31,28 @@ export function HeroSection() {
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
-    // Force attributes for iOS/Android autoplay
+
     video.muted = true
     video.setAttribute('playsinline', '')
     video.setAttribute('webkit-playsinline', '')
-    video.play().catch(() => {})
+
+    const tryPlay = () => { video.play().catch(() => {}) }
+
+    // Immediate attempt
+    tryPlay()
+
+    // Retry once the video has buffered enough — catches fresh page loads
+    // where the video wasn't ready when the component mounted
+    video.addEventListener('canplay', tryPlay)
+
+    // Resume after screen lock/unlock or tab switch back
+    const handleVisibility = () => { if (!document.hidden) tryPlay() }
+    document.addEventListener('visibilitychange', handleVisibility)
+
+    return () => {
+      video.removeEventListener('canplay', tryPlay)
+      document.removeEventListener('visibilitychange', handleVisibility)
+    }
   }, [])
 
   return (
@@ -53,7 +70,7 @@ export function HeroSection() {
         style={{ pointerEvents: 'none' }}
         /* object-[center_25%] focuses on upper portion of video on mobile portrait
            where the AC unit sits; md:object-center is fine on landscape */
-        className="absolute inset-0 w-full h-full object-cover scale-[1.15] object-[center_25%] md:object-center"
+        className="absolute inset-0 w-full h-full object-cover scale-[1.15] object-[right_25%] md:object-center"
       />
 
       {/* Cinematic overlay — dark bottom, reveals video at top */}
