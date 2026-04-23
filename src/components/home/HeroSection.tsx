@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Phone, ArrowDown } from 'lucide-react'
@@ -25,20 +26,37 @@ const itemVariants = {
 }
 
 export function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    // Force attributes for iOS/Android autoplay
+    video.muted = true
+    video.setAttribute('playsinline', '')
+    video.setAttribute('webkit-playsinline', '')
+    video.play().catch(() => {})
+  }, [])
+
   return (
-    <section className="relative h-screen min-h-[680px] max-h-[1080px] flex flex-col overflow-hidden">
-      {/* Background video — scaled up to crop black edges and watermark */}
+    <section className="relative flex flex-col overflow-hidden" style={{ height: '100dvh', minHeight: 620, maxHeight: 1080 }}>
+      {/* Background video — scaled to crop black edges and VEO watermark */}
       <video
+        ref={videoRef}
         src="/hero.mp4"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover scale-110"
+        style={{ pointerEvents: 'none' }}
+        /* object-[center_25%] focuses on upper portion of video on mobile portrait
+           where the AC unit sits; md:object-center is fine on landscape */
+        className="absolute inset-0 w-full h-full object-cover scale-[1.15] object-[center_25%] md:object-center"
       />
 
-      {/* Cinematic overlay — navy-900 vertical gradient (dark bottom, reveals image top) */}
+      {/* Cinematic overlay — dark bottom, reveals video at top */}
       <div
         className="absolute inset-0"
         style={{
@@ -61,74 +79,73 @@ export function HeroSection() {
       <div className="flex-1" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-10 pb-10 md:pb-14">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-10 pb-8 md:pb-14">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="max-w-3xl"
         >
-          {/* Pre-heading — copper line + silver label */}
-          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+          {/* Pre-heading */}
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-4 md:mb-6">
             <span
-              className="block w-10 h-px"
+              className="block w-8 md:w-10 h-px shrink-0"
               style={{ background: 'linear-gradient(to right, #B08A5B, #D4D7DE)' }}
               aria-hidden="true"
             />
-            <span className="section-label-dark">Est. {NAP.foundedYear} — Johannesburg, Gauteng</span>
+            <span className="section-label-dark text-[10px] md:text-xs">Est. {NAP.foundedYear} — Johannesburg, Gauteng</span>
           </motion.div>
 
-          {/* Main headline — white on dark */}
+          {/* Main headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-display font-semibold tracking-display leading-display mb-6 text-white"
-            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)' }}
+            className="font-display font-semibold tracking-display leading-display mb-4 md:mb-6 text-white"
+            style={{ fontSize: 'clamp(1.85rem, 5.5vw, 4.2rem)' }}
           >
             Precision Climate Control{' '}
             <span className="italic font-light" style={{ color: 'rgba(212,215,222,0.8)' }}>for</span>
             <br />
-            {/* Copper accent on the brand differentiator word */}
             <span style={{ color: '#C79C6B' }}>Johannesburg&apos;s</span>{' '}
             Finest Homes
             <br />
             <span className="italic font-light" style={{ color: 'rgba(184,188,196,0.85)' }}>&amp; Businesses</span>
           </motion.h1>
 
-          {/* Sub-headline — silver on dark */}
+          {/* Sub-headline — hidden on very small screens to save space */}
           <motion.p
             variants={itemVariants}
-            className="font-body text-base md:text-lg leading-relaxed mb-8 max-w-xl"
+            className="hidden sm:block font-body text-sm md:text-lg leading-relaxed mb-6 md:mb-8 max-w-xl"
             style={{ color: 'rgba(184,188,196,0.85)' }}
           >
             Over 30 years of craftsmanship in air conditioning, ventilation, and evaporative
             cooling. Trusted by MTN, Dainfern, Kyalami, and homeowners across Gauteng.
           </motion.p>
 
-          {/* CTAs */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
-            <Link href="/contact" className="btn-primary text-base">
+          {/* CTAs — full-width on mobile, inline on sm+ */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-10">
+            <Link href="/contact" className="btn-primary text-sm md:text-base text-center">
               Get a Free Quote
             </Link>
             <a
               href={`tel:${NAP.mobile}`}
-              className="btn-outline-dark flex items-center gap-2"
+              className="btn-outline-dark flex items-center justify-center gap-2 text-sm md:text-base"
               aria-label={`Call Raymond on ${NAP.mobileDisplay}`}
             >
-              <Phone size={15} aria-hidden="true" />
+              <Phone size={14} aria-hidden="true" />
               {NAP.mobileDisplay}
             </a>
           </motion.div>
 
-          {/* Trust strip */}
+          {/* Trust strip — hidden on xs, shown on sm+ */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap gap-x-6 gap-y-2"
+            className="hidden sm:flex flex-wrap gap-x-5 gap-y-2"
             aria-label="Trust indicators"
           >
             {trustBadges.map((badge, i) => (
               <div key={i} className="flex items-center gap-2">
                 <span
-                  className="block w-1 h-1 rounded-full"
+                  className="block w-1 h-1 rounded-full shrink-0"
                   style={{ backgroundColor: '#B08A5B' }}
                   aria-hidden="true"
                 />
@@ -144,15 +161,15 @@ export function HeroSection() {
 
       {/* Trusted by band — navy, anchored to bottom of hero */}
       <div
-        className="relative z-20 w-full overflow-hidden py-3.5"
+        className="relative z-20 w-full overflow-hidden py-3"
         style={{ backgroundColor: '#1A1F4C' }}
         aria-label="Trusted commercial clients"
       >
         <div className="flex items-center">
-          {/* Label */}
-          <div className="shrink-0 pl-6 lg:pl-10 pr-5 border-r" style={{ borderColor: 'rgba(184,188,196,0.15)' }}>
+          {/* Label — hide on very small screens */}
+          <div className="hidden xs:flex shrink-0 pl-4 sm:pl-6 lg:pl-10 pr-4 border-r" style={{ borderColor: 'rgba(184,188,196,0.15)' }}>
             <span
-              className="font-body text-[10px] tracking-[0.2em] uppercase font-medium whitespace-nowrap"
+              className="font-body text-[9px] tracking-[0.2em] uppercase font-medium whitespace-nowrap"
               style={{ color: '#B08A5B' }}
             >
               Trusted By
@@ -162,18 +179,18 @@ export function HeroSection() {
           {/* Scrolling names */}
           <div className="relative flex-1 overflow-hidden" aria-hidden="true">
             <div
-              className="absolute left-0 top-0 bottom-0 w-8 z-10 pointer-events-none"
+              className="absolute left-0 top-0 bottom-0 w-6 z-10 pointer-events-none"
               style={{ background: 'linear-gradient(to right, #1A1F4C, transparent)' }}
             />
             <div
-              className="absolute right-0 top-0 bottom-0 w-12 z-10 pointer-events-none"
+              className="absolute right-0 top-0 bottom-0 w-10 z-10 pointer-events-none"
               style={{ background: 'linear-gradient(to left, #1A1F4C, transparent)' }}
             />
             <div className="flex animate-scroll-left whitespace-nowrap" style={{ width: 'max-content' }}>
               {loopClients.map((client, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-3 px-5 font-body text-sm"
+                  className="inline-flex items-center gap-2.5 px-4 font-body text-xs"
                   style={{ color: 'rgba(184,188,196,0.6)' }}
                 >
                   <span
@@ -188,12 +205,12 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — desktop only */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-[68px] right-8 md:right-12 flex flex-col items-center gap-2"
+        className="hidden md:flex absolute bottom-[68px] right-12 flex-col items-center gap-2"
         style={{ opacity: 0.45 }}
         aria-hidden="true"
       >
