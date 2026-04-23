@@ -76,16 +76,15 @@ export function Header() {
             className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper rounded-lg"
             aria-label="Airtech Services — Home"
           >
-            <div className="bg-white rounded-md px-2.5 py-1.5 shadow-sm transition-shadow duration-200 group-hover:shadow-md">
-              <Image
-                src="/airtech-logo.png"
-                alt="Airtech Services"
-                width={120}
-                height={44}
-                className="h-9 w-auto"
-                priority
-              />
-            </div>
+            <Image
+              src="/airtech-logo-hd.png"
+              alt="Airtech Services"
+              width={120}
+              height={44}
+              className="h-9 w-auto transition-opacity duration-200 group-hover:opacity-90"
+              style={{ mixBlendMode: 'multiply' }}
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -207,15 +206,14 @@ export function Header() {
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                <div className="bg-white rounded-md px-2 py-1 shadow-sm">
-                  <Image
-                    src="/airtech-logo.png"
-                    alt="Airtech Services"
-                    width={90}
-                    height={33}
-                    className="h-7 w-auto"
-                  />
-                </div>
+                <Image
+                  src="/airtech-logo-hd.png"
+                  alt="Airtech Services"
+                  width={90}
+                  height={33}
+                  className="h-7 w-auto"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
                 <button
                   onClick={() => setMobileOpen(false)}
                   aria-label="Close navigation menu"
