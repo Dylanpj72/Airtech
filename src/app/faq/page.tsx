@@ -30,12 +30,12 @@ export default function FAQPage() {
       />
 
       {/* Hero */}
-      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#F7F8FA' }}>
+      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div className="container mx-auto px-6 lg:px-10">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />
-            <p className="section-label mb-3">FAQ</p>
-            <h1 className="display-heading max-w-xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)' }}>
+            <p className="section-label-dark mb-3">FAQ</p>
+            <h1 className="display-heading max-w-xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', color: '#FFFFFF' }}>
               Frequently Asked{' '}
               <span className="italic font-light" style={{ color: '#B08A5B' }}>Questions</span>
             </h1>

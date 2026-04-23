@@ -51,7 +51,7 @@ function PillarCard({ pillar, index }: { pillar: (typeof pillars)[0]; index: num
         <div
           className="w-11 h-11 flex items-center justify-center rounded-xl shrink-0"
           style={{
-            backgroundColor: hovered ? 'rgba(176,138,91,0.1)' : '#EEF0F7',
+            backgroundColor: hovered ? 'rgba(176,138,91,0.1)' : '#D8DCF0',
             transition: 'background-color 0.3s ease',
           }}
         >
@@ -86,7 +86,7 @@ export function WhyAirtech() {
   return (
     <section
       className="relative py-24 md:py-32 overflow-hidden"
-      style={{ backgroundColor: '#EEF0F7' }}
+      style={{ backgroundColor: '#D8DCF0' }}
       aria-labelledby="why-airtech-heading"
     >
       {/* Large watermark — editorial depth detail */}

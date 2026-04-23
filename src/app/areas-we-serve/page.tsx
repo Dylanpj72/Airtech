@@ -33,21 +33,21 @@ export default function AreasWeServePage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#F7F8FA' }}>
+      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(26,31,76,0.04) 0%, transparent 60%)' }}
+          style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(176,138,91,0.07) 0%, transparent 60%)' }}
           aria-hidden="true"
         />
         <div className="container mx-auto px-6 lg:px-10 relative z-10">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />
-            <p className="section-label mb-3">Service Area</p>
-            <h1 className="display-heading max-w-2xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)' }}>
+            <p className="section-label-dark mb-3">Service Area</p>
+            <h1 className="display-heading max-w-2xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', color: '#FFFFFF' }}>
               Serving Greater Johannesburg{' '}
               <span className="italic font-light" style={{ color: '#B08A5B' }}>&amp; Beyond</span>
             </h1>
-            <p className="font-body text-base mt-5 max-w-xl leading-relaxed" style={{ color: '#5A5F6E' }}>
+            <p className="font-body text-base mt-5 max-w-xl leading-relaxed" style={{ color: 'rgba(184,188,196,0.85)' }}>
               Based in Weltevreden Park, Roodepoort, we serve all areas across Johannesburg and
               Gauteng. From Dainfern to Pecanwood, our team covers the full Greater Johannesburg
               area and travels on request.

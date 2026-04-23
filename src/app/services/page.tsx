@@ -22,21 +22,21 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: '#F7F8FA' }}>
+      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(26,31,76,0.04) 0%, transparent 60%)' }}
+          style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(176,138,91,0.07) 0%, transparent 60%)' }}
           aria-hidden="true"
         />
         <div className="container mx-auto px-6 lg:px-10 relative z-10">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />
-            <p className="section-label mb-3">What We Offer</p>
-            <h1 className="display-heading max-w-2xl" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}>
+            <p className="section-label-dark mb-3">What We Offer</p>
+            <h1 className="display-heading max-w-2xl" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)', color: '#FFFFFF' }}>
               Premium HVAC{' '}
               <span className="italic font-light" style={{ color: '#B08A5B' }}>Services</span>
             </h1>
-            <p className="font-body text-base mt-5 max-w-xl leading-relaxed" style={{ color: '#5A5F6E' }}>
+            <p className="font-body text-base mt-5 max-w-xl leading-relaxed" style={{ color: 'rgba(184,188,196,0.85)' }}>
               From a single room to a full commercial facility, we have the expertise and
               experience to engineer the perfect climate solution for your space.
             </p>

@@ -35,16 +35,16 @@ export default function ProjectsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#F7F8FA' }}>
+      <section className="pt-40 pb-16 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div className="container mx-auto px-6 lg:px-10">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />
-            <p className="section-label mb-3">Our Work</p>
-            <h1 className="display-heading max-w-xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)' }}>
+            <p className="section-label-dark mb-3">Our Work</p>
+            <h1 className="display-heading max-w-xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', color: '#FFFFFF' }}>
               Projects &amp;{' '}
               <span className="italic font-light" style={{ color: '#B08A5B' }}>Portfolio</span>
             </h1>
-            <p className="font-body text-base mt-5 max-w-xl leading-relaxed" style={{ color: '#5A5F6E' }}>
+            <p className="font-body text-base mt-5 max-w-xl leading-relaxed" style={{ color: 'rgba(184,188,196,0.85)' }}>
               Over 30 years of installations across Johannesburg&apos;s finest estates, commercial
               offices, and industrial facilities. Every project reflects our commitment to
               craftsmanship.

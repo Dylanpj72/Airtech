@@ -14,9 +14,9 @@
   --font-manrope: 'Manrope', system-ui, sans-serif;
 
   /* ── Light-mode surfaces ────────────────────────────────── */
-  --color-base:     #F7F8FA;  /* platinum — page background */
+  --color-base:     #ECEEF5;  /* platinum — page background */
   --color-surface:  #FFFFFF;  /* white — cards */
-  --color-elevated: #EEF0F7;  /* navy-100 — tinted elevated */
+  --color-elevated: #D8DCF0;  /* navy-100 — tinted elevated */
 
   /* ── Text ───────────────────────────────────────────────── */
   --color-text:           #1C1F2A;  /* ink */
@@ -29,7 +29,7 @@
   --color-navy-800: #141836;
   --color-navy-700: #2A3068;
   --color-navy-500: #3A4285;
-  --color-navy-100: #EEF0F7;
+  --color-navy-100: #D8DCF0;
 
   /* ── Brand: Silver ──────────────────────────────────────── */
   --color-silver:     #B8BCC4;

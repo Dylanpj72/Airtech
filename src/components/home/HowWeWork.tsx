@@ -33,7 +33,7 @@ export function HowWeWork() {
   return (
     <section
       className="py-24 md:py-32"
-      style={{ backgroundColor: '#F7F8FA' }}
+      style={{ backgroundColor: '#ECEEF5' }}
       aria-labelledby="process-heading"
     >
       <div className="container mx-auto px-6 lg:px-10">

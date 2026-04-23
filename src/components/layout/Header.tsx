@@ -64,7 +64,7 @@ export function Header() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           scrolled
-            ? 'bg-white/96 backdrop-blur-md shadow-[0_1px_0_rgba(212,215,222,0.8),0_4px_20px_rgba(26,31,76,0.06)] py-3'
+            ? 'bg-[#0D1128]/97 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.05),0_4px_24px_rgba(0,0,0,0.28)] py-3'
             : 'bg-transparent py-5'
         )}
       >
@@ -97,7 +97,7 @@ export function Header() {
                     className={cn(
                       'flex items-center gap-1 font-body text-sm font-medium transition-colors duration-200 focus-visible:outline-none',
                       scrolled
-                        ? 'text-brand-ink-muted hover:text-brand-navy'
+                        ? 'text-white/75 hover:text-white'
                         : 'text-white/75 hover:text-white'
                     )}
                     aria-haspopup="true"
@@ -120,7 +120,7 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-5 py-3 font-body text-sm text-brand-ink-muted hover:text-brand-navy hover:bg-[#EEF0F7] border-b border-[#E5E7EC] last:border-0 transition-colors duration-150"
+                          className="block px-5 py-3 font-body text-sm text-[#1C1F2A] hover:text-[#1A1F4C] hover:bg-[#D8DCF0] border-b border-[#E5E7EC] last:border-0 transition-colors duration-150"
                         >
                           {child.label}
                         </Link>
@@ -135,7 +135,7 @@ export function Header() {
                   className={cn(
                     'font-body text-sm font-medium transition-colors duration-200',
                     scrolled
-                      ? 'text-brand-ink-muted hover:text-brand-navy'
+                      ? 'text-white/75 hover:text-white'
                       : 'text-white/75 hover:text-white'
                   )}
                 >
@@ -152,7 +152,7 @@ export function Header() {
               className={cn(
                 'flex items-center gap-2 font-body text-sm transition-colors duration-200',
                 scrolled
-                  ? 'text-brand-ink-muted hover:text-brand-navy'
+                  ? 'text-white/65 hover:text-white'
                   : 'text-white/70 hover:text-white'
               )}
               aria-label={`Call us on ${NAP.phone1Display}`}
@@ -169,7 +169,7 @@ export function Header() {
           <button
             className={cn(
               'lg:hidden p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper rounded',
-              scrolled ? 'text-brand-navy' : 'text-white'
+              scrolled ? 'text-white' : 'text-white'
             )}
             onClick={() => setMobileOpen(true)}
             aria-label="Open navigation menu"

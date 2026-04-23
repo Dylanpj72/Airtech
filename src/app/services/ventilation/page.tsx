@@ -49,21 +49,26 @@ export default function VentilationPage() {
       />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: '#F7F8FA' }}>
+      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 30% 35%, rgba(176,138,91,0.07) 0%, transparent 60%)' }}
+          aria-hidden="true"
+        />
         <div className="container mx-auto px-6 lg:px-10">
           <AnimateIn>
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 font-body text-xs" style={{ color: '#9095A6' }}>
-                <li><Link href="/" className="hover:text-[#1A1F4C] transition-colors">Home</Link></li>
+              <ol className="flex items-center gap-2 font-body text-xs" style={{ color: 'rgba(184,188,196,0.55)' }}>
+                <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li aria-hidden="true">/</li>
-                <li><Link href="/services" className="hover:text-[#1A1F4C] transition-colors">Services</Link></li>
+                <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
                 <li aria-hidden="true">/</li>
-                <li style={{ color: '#B8BCC4' }} aria-current="page">Ventilation</li>
+                <li style={{ color: 'rgba(184,188,196,0.35)' }} aria-current="page">Ventilation</li>
               </ol>
             </nav>
             <span className="copper-line" aria-hidden="true" />
-            <p className="section-label mb-3">Service</p>
-            <h1 className="display-heading max-w-2xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)' }}>
+            <p className="section-label-dark mb-3">Service</p>
+            <h1 className="display-heading max-w-2xl" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', color: '#FFFFFF' }}>
               Natural Ventilation That{' '}
               <span className="italic font-light" style={{ color: '#B08A5B' }}>Protects Your Home</span>
             </h1>

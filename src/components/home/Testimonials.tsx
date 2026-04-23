@@ -97,7 +97,7 @@ export function Testimonials() {
   return (
     <section
       className="py-24 md:py-32"
-      style={{ backgroundColor: '#EEF0F7' }}
+      style={{ backgroundColor: '#D8DCF0' }}
       aria-labelledby="testimonials-heading"
     >
       <div className="container mx-auto px-6 lg:px-10">

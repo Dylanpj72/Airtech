@@ -22,17 +22,17 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: '#F7F8FA' }}>
+      <section className="pt-40 pb-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 25% 30%, rgba(26,31,76,0.04) 0%, transparent 60%)' }}
+          style={{ background: 'radial-gradient(ellipse at 25% 30%, rgba(176,138,91,0.07) 0%, transparent 60%)' }}
           aria-hidden="true"
         />
         <div className="container mx-auto px-6 lg:px-10 relative z-10">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />
-            <p className="section-label mb-3">Our Story</p>
-            <h1 className="display-heading max-w-3xl" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}>
+            <p className="section-label-dark mb-3">Our Story</p>
+            <h1 className="display-heading max-w-3xl" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)', color: '#FFFFFF' }}>
               Three Decades of Trusted{' '}
               <span className="italic font-light" style={{ color: '#B08A5B' }}>Climate Expertise</span>
             </h1>
@@ -96,7 +96,7 @@ export default function AboutPage() {
       </section>
 
       {/* What we do — tinted section */}
-      <section className="py-20" style={{ backgroundColor: '#EEF0F7' }}>
+      <section className="py-20" style={{ backgroundColor: '#D8DCF0' }}>
         <div className="container mx-auto px-6 lg:px-10 max-w-3xl">
           <AnimateIn>
             <span className="copper-line" aria-hidden="true" />
@@ -143,7 +143,7 @@ export default function AboutPage() {
       </section>
 
       {/* Estates */}
-      <section className="py-20" style={{ backgroundColor: '#EEF0F7' }}>
+      <section className="py-20" style={{ backgroundColor: '#D8DCF0' }}>
         <div className="container mx-auto px-6 lg:px-10">
           <AnimateIn className="mb-10">
             <h2 className="section-heading text-3xl md:text-4xl mb-2">Estates We Serve</h2>
