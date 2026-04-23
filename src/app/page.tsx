@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { HeroSection } from '@/components/home/HeroSection'
 import { ServicesGrid } from '@/components/home/ServicesGrid'
 import { WhyAirtech } from '@/components/home/WhyAirtech'
-import { ClientLogos } from '@/components/home/ClientLogos'
 import { Testimonials } from '@/components/home/Testimonials'
 import { HowWeWork } from '@/components/home/HowWeWork'
 import { AreasTeaser } from '@/components/home/AreasTeaser'
@@ -55,7 +54,6 @@ export default function HomePage() {
       <HeroSection />
       <ServicesGrid />
       <WhyAirtech />
-      <ClientLogos />
       <Testimonials />
       <HowWeWork />
       <AreasTeaser />

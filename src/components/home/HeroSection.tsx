@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, ArrowDown } from 'lucide-react'
-import { NAP } from '@/lib/constants'
+import { NAP, COMMERCIAL_CLIENTS } from '@/lib/constants'
 
 const trustBadges = [
   { label: 'Est.',       value: '1992' },
@@ -12,6 +12,8 @@ const trustBadges = [
   { label: 'Commercial', value: '& Residential' },
   { label: 'Serving',    value: 'Greater Gauteng' },
 ]
+
+const loopClients = [...COMMERCIAL_CLIENTS, ...COMMERCIAL_CLIENTS]
 
 const containerVariants = {
   hidden: {},
@@ -25,7 +27,7 @@ const itemVariants = {
 
 export function HeroSection() {
   return (
-    <section className="relative h-screen min-h-[680px] max-h-[1080px] flex flex-col justify-end overflow-hidden">
+    <section className="relative h-screen min-h-[680px] max-h-[1080px] flex flex-col overflow-hidden">
       {/* Background image — luxury interior, warm tones */}
       <Image
         src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=85"
@@ -55,8 +57,11 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
+      {/* Flex spacer — pushes content to bottom */}
+      <div className="flex-1" aria-hidden="true" />
+
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-10 pb-16 md:pb-20">
+      <div className="relative z-10 container mx-auto px-6 lg:px-10 pb-10 md:pb-14">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -137,12 +142,58 @@ export function HeroSection() {
         </motion.div>
       </div>
 
+      {/* Trusted by band — navy, anchored to bottom of hero */}
+      <div
+        className="relative z-20 w-full overflow-hidden py-3.5"
+        style={{ backgroundColor: '#1A1F4C' }}
+        aria-label="Trusted commercial clients"
+      >
+        <div className="flex items-center">
+          {/* Label */}
+          <div className="shrink-0 pl-6 lg:pl-10 pr-5 border-r" style={{ borderColor: 'rgba(184,188,196,0.15)' }}>
+            <span
+              className="font-body text-[10px] tracking-[0.2em] uppercase font-medium whitespace-nowrap"
+              style={{ color: '#B08A5B' }}
+            >
+              Trusted By
+            </span>
+          </div>
+
+          {/* Scrolling names */}
+          <div className="relative flex-1 overflow-hidden" aria-hidden="true">
+            <div
+              className="absolute left-0 top-0 bottom-0 w-8 z-10 pointer-events-none"
+              style={{ background: 'linear-gradient(to right, #1A1F4C, transparent)' }}
+            />
+            <div
+              className="absolute right-0 top-0 bottom-0 w-12 z-10 pointer-events-none"
+              style={{ background: 'linear-gradient(to left, #1A1F4C, transparent)' }}
+            />
+            <div className="flex animate-scroll-left whitespace-nowrap" style={{ width: 'max-content' }}>
+              {loopClients.map((client, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-3 px-5 font-body text-sm"
+                  style={{ color: 'rgba(184,188,196,0.6)' }}
+                >
+                  <span
+                    className="inline-block w-1 h-1 rounded-full shrink-0"
+                    style={{ backgroundColor: 'rgba(176,138,91,0.35)' }}
+                  />
+                  {client}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 right-8 md:right-12 flex flex-col items-center gap-2"
+        className="absolute bottom-[68px] right-8 md:right-12 flex flex-col items-center gap-2"
         style={{ opacity: 0.45 }}
         aria-hidden="true"
       >
