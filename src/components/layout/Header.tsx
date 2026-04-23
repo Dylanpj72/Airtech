@@ -81,7 +81,7 @@ export function Header() {
               alt="Airtech Services"
               width={120}
               height={44}
-              className="h-12 lg:h-[168px] w-auto transition-opacity duration-200 group-hover:opacity-90"
+              className="h-[72px] lg:h-[168px] w-auto transition-opacity duration-200 group-hover:opacity-90"
               style={{ mixBlendMode: 'multiply' }}
               priority
             />
