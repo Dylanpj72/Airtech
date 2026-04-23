@@ -30,7 +30,7 @@ export function HeroSection() {
     <section className="relative h-screen min-h-[680px] max-h-[1080px] flex flex-col overflow-hidden">
       {/* Background image — luxury interior, warm tones */}
       <Image
-        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=85"
+        src="/hero.png"
         alt="Precision HVAC installation in a Johannesburg luxury home"
         fill
         priority
