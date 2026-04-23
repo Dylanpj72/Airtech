@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, ArrowDown } from 'lucide-react'
 import { NAP, COMMERCIAL_CLIENTS } from '@/lib/constants'
@@ -28,14 +27,15 @@ const itemVariants = {
 export function HeroSection() {
   return (
     <section className="relative h-screen min-h-[680px] max-h-[1080px] flex flex-col overflow-hidden">
-      {/* Background image — luxury interior, warm tones */}
-      <Image
-        src="/hero.png"
-        alt="Precision HVAC installation in a Johannesburg luxury home"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
+      {/* Background video — scaled up to crop black edges and watermark */}
+      <video
+        src="/hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover scale-110"
       />
 
       {/* Cinematic overlay — navy-900 vertical gradient (dark bottom, reveals image top) */}
